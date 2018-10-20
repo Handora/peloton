@@ -24,7 +24,28 @@ namespace index {
 template <typename KeyType, typename ValueType, typename KeyComparator,
           typename KeyEqualityChecker, typename ValueEqualityChecker>
 class SkipList {
-  // TODO: Add your declarations here
+ public:
+  class SkipListNode {
+   public:
+    SkipListNode();
+   private:
+    KeyType key_;
+    ValueType value_;
+    SkipListNode* next_;
+    SkipListNode* up_;
+    SkipListNode* low_;
+    uint8_t level_;
+  };
+
+  SkipList();
+  bool Insert(KeyType key, ValueType value);
+  bool Delete(KeyType key);
+  
+ private:
+  SkipList* base_;
+ // feel free to add any thing neccessary
+ // or reorder the structure
+ // or rename everything
 };
 
 }  // namespace index
